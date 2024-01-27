@@ -38,6 +38,12 @@ addBtn.addEventListener("click", (e) => {
 
     todoValue = todoInput.value
 
+    // if input is empty
+    if (!todoValue) {
+        alert("Input cannot be left empty")
+        return
+    }
+
     // created a div which contains a class of input-container
     const inputContainer = document.createElement("div");
     inputContainer.classList.add("input-container");
@@ -121,19 +127,19 @@ addBtn.addEventListener("click", (e) => {
         }
     })
 
-
+    // to delete the task
     todoDel.addEventListener("click", (e) => {
         inputContainer.remove(todoInputList)
     })
 
+    // check if the task is completed or not
 
-
-    taskDone .addEventListener("click", (e) => {
+    taskDone.addEventListener("click", (e) => {
         checkBox
-        if(checkBox.checked){
+        if (checkBox.checked) {
             checkBox.checked = false
         }
-        else{
+        else {
             checkBox.checked = true
             taskDone.innerText = "Completed"
         }
